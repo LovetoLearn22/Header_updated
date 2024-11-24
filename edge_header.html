@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a;
+        }
+
+        .fix_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000; /* Black header background */
+            color: #fff; /* White text for contrast */
+            padding: 10px 40px 10px 20px; /* Space inside the header (10px top/bottom, 40px left/right) */
+            box-shadow: 0 2px 16px rgba(54, 56, 79, 0.06); /* Subtle shadow under the header for depth */
+            position: fixed; /* Keeps the header fixed at the top of the screen */
+            width: calc(100% - 20px); /* Ensures the header stretches across the full screen */
+            top: 0; /* Positions the header at the very top of the screen */
+            z-index: 1000; /* Ensures the header is on top of other elements */
+        }
+
+        .header-left,
+        .header-right {
+            display: flex; /* Align items in a row */
+            align-items: center; /* Vertically center items */
+        }
+
+        .header-left {
+            gap: 15px; /* Space between elements on the left side */
+        }
+
+        .header-right {
+            gap: 15px; /* Space between elements on the right side */
+            margin-right: 20px; /* Space between the right-most element and the screen edge */
+        }
+
+        .header-left a,
+        .header-right a {
+            text-decoration: none;
+            color: #fff; /* Ensure links are white */
+            margin-right: 20px; /* Adjust spacing between links */
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .header-left a:hover,
+        .header-right a:hover {
+            color: #3073e6; /* Red hover effect for links */
+        }
+
+        .header-left .download-app-wrapper a {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .login-button {
+            color: #fff;
+            background-color: #3a8bff; /* Bright red login button */
+            padding: 5px 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            margin-right: 0;
+
+
+        }
+
+        .login-button:hover {
+            background-color: #3073e6; /* Slightly darker hover effect */
+        }
+
+        .weather-wrapper {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .weather-abstract span,
+        .weather-abstract i {
+            margin-right: 8px;
+            color: #ccc; /* Slightly dimmer for secondary elements */
+            font-size: 14px;
+        }
+
+        .weather-abstract .air {
+            color: #00cc66; /* Green for good air quality */
+        }
+
+        .notification-container a,
+        .publisher-icon a {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Add space between icon and text */
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .notification-icon,
+        .create-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .notification-icon {
+            background-image: url(IMAGES/notification.png);
+        }
+
+        .create-icon {
+            background-image: url(IMAGES/plus.png);
+        }
+
+        .fix_header {
+            padding: 10px 40px; /* Increased right padding */
+        }
+
+
+        .header-left,
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left {
+            gap: 15px;
+        }
+
+        .header-right {
+            gap: 15px;
+            margin-right: 20px;
+        }
+
+        .download-panel {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .download-panel .title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .download-app-wrapper:hover .download-panel {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<header class="fix_header common-component-wrapper">
+    <div class="header-left">
+        <div class="download-app-wrapper">
+            <a href="#" target="_blank" rel="noopener nofollow">Download The App</a>
+            <div class="download-panel">
+                <div class="title">Scan the QR Code to Download Edge</div>
+                <i style="background-image: url('https://your-qrcode-url.com'); width: 100px; height: 100px;"></i>
+            </div>
+        </div>
+        <a href="/about" target="_blank" rel="noopener nofollow">About Edge</a>
+        <a role="button" tabindex="0" href="/feedback">Feedback</a>
+    </div>
+    <div class="header-right">
+        <div class="notification-container">
+            <a href="IMAGES/notification.png">
+                <span class="notification-icon"></span>Notifications
+            </a>
+        </div>
+        <div class="publisher-icon">
+            <a href="IMAGES/plus.png">
+                <span class="create-icon"></span>Create
+            </a>
+        </div>
+        <a class="login-button" rel="nofollow">Login</a>
+    </div>
+</header>
+</body>
+</html>
